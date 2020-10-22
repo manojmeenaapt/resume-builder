@@ -27,7 +27,7 @@ export class Language extends Component {
               label: 'English',
             },
             {
-              value: 'HINDI',
+              value: 'HI',
               label: 'Hindi',
             }
           ];
