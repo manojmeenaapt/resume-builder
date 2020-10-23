@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import { Language } from '../language/Language'
 import PersonalDetails from '../personaldetails/PersonalDetails'
 import ProfessionalSummary from '../professionalsummary/ProfessionalSummary'
+import EmploymentHistory from '../employmenthistory/EmploymentHistory';
 
 
 export class LeftSidebar extends Component {
@@ -15,6 +16,7 @@ export class LeftSidebar extends Component {
                     <Language />
                     <PersonalDetails />
                     <ProfessionalSummary />
+                    <EmploymentHistory />
                 </div>
             </div>
         )
