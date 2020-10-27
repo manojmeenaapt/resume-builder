@@ -10,7 +10,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 
 
-export class EmploymentHistoryBox extends Component {
+export class EducationBox extends Component {
 
     constructor(props) {
         super(props);
@@ -26,13 +26,13 @@ export class EmploymentHistoryBox extends Component {
 
     render() {
         return (
-            <div className="employmentBox">
-                <FormControl className="employmentDetail">
-                    <TextField label="Job Title" />
+            <div className="educationbox">
+                <FormControl className="educationDetail">
+                    <TextField label="School/College" />
                 </FormControl>
 
-                <FormControl className="employmentDetail">
-                    <TextField  label="Employer" />
+                <FormControl className="educationDetail">
+                    <TextField  label="Degree" />
                 </FormControl>
 
                 <FormControl>
@@ -44,6 +44,10 @@ export class EmploymentHistoryBox extends Component {
                 <DatePicker selected={this.state.endDate} onChange={date => this.setState({
                                 endDate:date
                     })} />
+
+                <FormControl className="educationDetail">
+                    <TextField  label="City" />
+                </FormControl>
 
                 <CKEditor
                     editor={ ClassicEditor }
@@ -76,4 +80,4 @@ export class EmploymentHistoryBox extends Component {
     }
 }
 
-export default EmploymentHistoryBox
+export default EducationBox

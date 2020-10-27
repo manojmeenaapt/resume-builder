@@ -1,26 +1,31 @@
 import React, { Component } from 'react'
-import TextField from '@material-ui/core/TextField';
 import { Language } from '../language/Language'
 import PersonalDetails from '../personaldetails/PersonalDetails'
 import ProfessionalSummary from '../professionalsummary/ProfessionalSummary'
 import EmploymentHistory from '../employmenthistory/EmploymentHistory';
+import Education from '../education/Education'
+import WebsiteLinks from '../website-and-social-link/WebsiteLinks'
+import ResumeTitle from '../resumetitle/resumetitle'
 
 
-export class LeftSidebar extends Component {
 
+class LeftSidebar extends Component {
     render() {
         return (
             <div className="leftsidebar">
                 <div className="resume-head"> 
-                    <TextField label="Resume Title" autoFocus={true} fullWidth = {true}/>
+                    <ResumeTitle />
                     <Language />
                     <PersonalDetails />
                     <ProfessionalSummary />
                     <EmploymentHistory />
+                    <Education />
+                    <WebsiteLinks />
                 </div>
             </div>
         )
     }
+    
 }
 
 export default LeftSidebar
