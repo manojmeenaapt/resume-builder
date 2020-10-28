@@ -1,14 +1,15 @@
-import initialState from '../../initialState'
 import { UPDATE_RESUME_LANGUAGE } from '../../actionTypes'
 
-function titleReducer(state = initialState, action) {
+    const intialState = {currentLanguage:'en'}
+
+function languageReducer(state = intialState, action) { 
   if(action.type === UPDATE_RESUME_LANGUAGE){
     return {
       ...state,
-      language : action.payload.language
+      currentLanguage : action.payload.currentLanguage
     }
   }
     return state;
   };
   
-  export default titleReducer;
+  export default languageReducer;

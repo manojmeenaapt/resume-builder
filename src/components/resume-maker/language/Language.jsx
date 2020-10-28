@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import store from '../../../redux/store'
 import { UPDATE_RESUME_LANGUAGE } from '../../../redux/actionTypes'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 
 export class Language extends Component {
     constructor(props){
@@ -13,11 +13,10 @@ export class Language extends Component {
     }
 
     handleChange = (event) => {
-        console.log(event.target.value)
         this.setState({
             defaultLanguage:event.target.value
         })
-        store.dispatch( {type:UPDATE_RESUME_LANGUAGE, payload:{language:event.target.value}}) ;
+        store.dispatch( {type:UPDATE_RESUME_LANGUAGE, payload:{currentLanguage:event.target.value}}) ;
     };
     
     render() {

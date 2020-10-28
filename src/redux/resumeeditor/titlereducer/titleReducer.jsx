@@ -1,7 +1,9 @@
-import initialState from '../../initialState'
 import { UPDATE_RESUME_TITLE } from '../../actionTypes'
 
-function titleReducer(state = initialState, action) {
+const intialState = {title:'name of resume title'}
+
+
+function titleReducer(state = intialState, action) {
   if(action.type === UPDATE_RESUME_TITLE){
     return {
       ...state,
