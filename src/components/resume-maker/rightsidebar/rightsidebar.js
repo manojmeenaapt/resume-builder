@@ -1,13 +1,30 @@
-import React, { Component } from 'react'
+import React from 'react';
+import { PDFDownloadLink, Document, Page, View, Text } from '@react-pdf/renderer'
 
-export class RightSidebar extends Component {
-    render() {
-        return (
-            <div className="rightsidebar">
-                Right Sidebar
-            </div>
+
+
+      const Resume = ()=> {
+        return(
+          <Document>
+          <Page>
+             <View>
+                <Text>
+                   Hallo das ist ein Twst
+                </Text>
+            </View>
+          </Page>
+        </Document>
         )
-    }
-}
+      }
 
-export default RightSidebar
+      const Rightsidebar = () =>{
+        return (
+          <div>
+             <PDFDownloadLink document={<Resume />} fileName="resume.pdf">
+                {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
+              </PDFDownloadLink>
+          </div>
+        );
+      }
+
+export default Rightsidebar;
