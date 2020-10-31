@@ -19,6 +19,8 @@ import {
     UPDATE_DOB,
     UDPATE_NATIONALITY
 } from '../../../redux/actionTypes.jsx'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 export class PersonalDetails extends Component {
@@ -162,6 +164,8 @@ export class PersonalDetails extends Component {
                             </FormControl>
 
                             <FormControl className="personal-details-fields">
+                            <DatePicker selected={this.state.dob} name="dob" id="dob" onChange={date => this.setDate(date)} />
+
                                 <TextField value={this.state.dob} name="dob" id="dob" label="Date of Birth" variant="outlined" onChange={this.personaldetailHandler}/>
                             </FormControl>
 

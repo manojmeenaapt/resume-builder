@@ -1,30 +1,36 @@
-import React from 'react';
-import { PDFDownloadLink, Document, Page, View, Text } from '@react-pdf/renderer'
+import React, {Component}from 'react';
+import {connect } from 'react-redux';
 
 
+class Resumedata extends Component {
+  render(){
+    console.log(this.props)
+    const {resumetitle, language, personaldetails } = this.props
+    return(
+      <div className="resumecontainer">
+      
+           <p>{personaldetails.firstname} {personaldetails.lastname}</p>
+           <p>{personaldetails.jobtitle}</p>
+           <p>{personaldetails.email}</p>
+           <p>{personaldetails.phone}</p>
 
-      const Resume = ()=> {
-        return(
-          <Document>
-          <Page>
-             <View>
-                <Text>
-                   Hallo das ist ein Twst
-                </Text>
-            </View>
-          </Page>
-        </Document>
-        )
-      }
+           <p>{personaldetails.country}</p>
+           <p>{personaldetails.city}</p>
+           <p>{personaldetails.address}</p>
+           <p>{personaldetails.postalcode}</p>
+           <p>{personaldetails.drivinglicense}</p>
+           <p>{personaldetails.nationality}</p>
+           <p>{personaldetails.placeofbirth}</p>
+           <p>{personaldetails.dob}</p>
 
-      const Rightsidebar = () =>{
-        return (
-          <div>
-             <PDFDownloadLink document={<Resume />} fileName="resume.pdf">
-                {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
-              </PDFDownloadLink>
-          </div>
-        );
-      }
+      </div>
+    )
+  }
+}
+      const mapStateToProps = state => {
+        return state;
+      };
 
+
+    const Rightsidebar = connect(mapStateToProps)(Resumedata)
 export default Rightsidebar;
