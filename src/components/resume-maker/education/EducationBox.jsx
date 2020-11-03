@@ -63,7 +63,7 @@ export class EducationBox extends Component {
                     } }
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();
-                        console.log( { event, editor, data } );
+                        //console.log( { event, editor, data } );
                     } }
                     onBlur={ ( event, editor ) => {
                         // console.log( 'Blur.', editor );

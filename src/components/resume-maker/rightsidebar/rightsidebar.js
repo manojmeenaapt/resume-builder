@@ -4,7 +4,6 @@ import {connect } from 'react-redux';
 
 class Resumedata extends Component {
   render(){
-    console.log(this.props)
     const {resumetitle, language, personaldetails } = this.props
     return(
       <div className="resumecontainer">
