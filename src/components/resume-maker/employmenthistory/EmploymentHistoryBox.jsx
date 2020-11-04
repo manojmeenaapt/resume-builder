@@ -56,23 +56,15 @@ export class EmploymentHistoryBox extends Component {
     }
 
     convertDateToString = (date) => {
+        date = new Date(date);
         return date.toLocaleString("en-GB", {
             month: "short",
             year: "numeric",
         });      
      }
      convertDateToStringnForInput = (date) => {
-        var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-        if (month.length < 2) 
-            month = '0' + month;
-        if (day.length < 2) 
-            day = '0' + day;
-
-        return [year, month, day].join('-');
+         date = new Date(date);
+        return date.toISOString().slice(0,10);;
      }
         
     render() {
@@ -86,7 +78,7 @@ export class EmploymentHistoryBox extends Component {
                                 {this.state.jobtitle?this.state.jobtitle:"(Not Specified)"}
                             </div>
                             <div className="sc-kGeDwz sc-gwZsXD eApNNm">
-                                {this.convertDateToString(new Date(Date.parse(this.state.startDate)))} - {this.convertDateToString(new Date(Date.parse(this.state.endDate)))}
+                                {this.convertDateToString(Date.parse(this.state.startDate))} - {this.convertDateToString(Date.parse(this.state.endDate))}
                             </div>
                         </div>
                         <div className="sc-cKZAiZ sc-klSiHT LYHIX">
@@ -122,13 +114,13 @@ export class EmploymentHistoryBox extends Component {
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Start Date <i className="fa fa-question-circle-o"></i></label>
-									<input className="form-control" type="date" value={this.convertDateToStringnForInput(new Date(Date.parse(this.state.startDate)))} name="startDate"  onChange={this.employmentDetailsHandler} placeholder="Start Date"/>
+									<input className="form-control" type="date" value={this.convertDateToStringnForInput(Date.parse(this.state.startDate))} name="startDate"  onChange={this.employmentDetailsHandler} placeholder="Start Date"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>End Date <i className="fa fa-question-circle-o"></i></label>
-									<input className="form-control" type="date" value={this.convertDateToStringnForInput(new Date(Date.parse(this.state.endDate)))} name="endDate"  onChange={this.employmentDetailsHandler} placeholder="End Date"/>
+									<input className="form-control" type="date" value={this.convertDateToStringnForInput(Date.parse(this.state.endDate))} name="endDate"  onChange={this.employmentDetailsHandler} placeholder="End Date"/>
 								</div>
 							</div>
 
