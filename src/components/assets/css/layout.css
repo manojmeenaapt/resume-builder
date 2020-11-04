@@ -1,0 +1,441 @@
+@font-face {
+  font-family: "AinsdaleRegular";
+  src: url("../fonts/AinsdaleRegular.eot");
+  src: url("../fonts/AinsdaleRegular.eot") format("embedded-opentype"), url("../fonts/AinsdaleRegular.woff2") format("woff2"), url("../fonts/AinsdaleRegular.woff") format("woff"), url("../fonts/AinsdaleRegular.ttf") format("truetype"), url("../fonts/AinsdaleRegular.svg#AinsdaleRegular") format("svg");
+}
+@font-face {
+  font-family: "alternate_gothic_no3_dregular";
+  src: url("../fonts/alternate_gothic_no3_d_regular-webfont.woff2") format("woff2"), url("../fonts/alternate_gothic_no3_d_regular-webfont.woff") format("woff"), url("../fonts/alternate_gothic_no3_d_regular-webfont.svg#alternate_gothic_no3_dregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pangram";
+  src: url("../fonts/pangram-extralight-webfont.eot");
+  src: url("../fonts/pangram-extralight-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pangram-extralight-webfont.woff2") format("woff2"), url("../fonts/pangram-extralight-webfont.woff") format("woff"), url("../fonts/pangram-extralight-webfont.svg#pangramextralight") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pangram";
+  src: url("../fonts/pangram-light-webfont.eot");
+  src: url("../fonts/pangram-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pangram-light-webfont.woff2") format("woff2"), url("../fonts/pangram-light-webfont.woff") format("woff"), url("../fonts/pangram-light-webfont.svg#pangramlight") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pangram";
+  src: url("../fonts/pangram-regular-webfont.eot");
+  src: url("../fonts/pangram-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pangram-regular-webfont.woff2") format("woff2"), url("../fonts/pangram-regular-webfont.woff") format("woff"), url("../fonts/pangram-regular-webfont.svg#pangramregular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pangram";
+  src: url("../fonts/pangram-medium-webfont.eot");
+  src: url("../fonts/pangram-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pangram-medium-webfont.woff2") format("woff2"), url("../fonts/pangram-medium-webfont.woff") format("woff"), url("../fonts/pangram-medium-webfont.svg#pangrammedium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pangram";
+  src: url("../fonts/pangram-bold-webfont.eot");
+  src: url("../fonts/pangram-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pangram-bold-webfont.woff2") format("woff2"), url("../fonts/pangram-bold-webfont.woff") format("woff"), url("../fonts/pangram-bold-webfont.svg#pangrambold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pangram";
+  src: url("../fonts/pangram-extrabold-webfont.eot");
+  src: url("../fonts/pangram-extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pangram-extrabold-webfont.woff2") format("woff2"), url("../fonts/pangram-extrabold-webfont.woff") format("woff"), url("../fonts/pangram-extrabold-webfont.svg#pangramextrabold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pangram";
+  src: url("../fonts/pangram-black-webfont.eot");
+  src: url("../fonts/pangram-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pangram-black-webfont.woff2") format("woff2"), url("../fonts/pangram-black-webfont.woff") format("woff"), url("../fonts/pangram-black-webfont.svg#pangramblack") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+body {
+  font-family: pangram;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  color: #3D3935;
+  height: 100vh;
+}
+
+.left-form {
+  padding: 50px;
+}
+.left-form .top h3 {
+  font-size: 32px;
+  line-height: 34px;
+}
+.left-form .top span {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 20px;
+  color: #98a1b3;
+  cursor: pointer;
+  justify-content: center;
+}
+.left-form .top span img {
+  width: 19px;
+  height: 12px;
+  margin-right: 8px;
+  display: inline-block;
+}
+.left-form .progress-sec {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #f2f5fa;
+  padding-bottom: 10px;
+  margin: 20px 0 16px;
+  position: relative;
+}
+.left-form .progress-sec .left p, .left-form .progress-sec .right p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  color: #98a1b3;
+  display: flex;
+  align-items: center;
+}
+.left-form .progress-sec .left p span, .left-form .progress-sec .right p span {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #25b869;
+  margin-right: 6px;
+}
+.left-form .progress-sec .left p i, .left-form .progress-sec .right p i {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #25b869;
+  margin-left: 16px;
+}
+.left-form .progress-sec .left p span {
+  color: #ff4c4c;
+}
+.left-form .progress-sec:before {
+  content: "";
+  background: #ff4c4c;
+  height: 3px;
+  width: 10%;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+.left-form .form-sec {
+  margin-top: 40px;
+}
+.left-form .form-sec h4 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.left-form .form-sec .form-control {
+  border-radius: 3px;
+  padding: 11px 16px;
+  width: 100%;
+  display: block;
+  caret-color: #2196f3;
+  background-color: #f2f5fa;
+  outline: currentcolor none medium;
+  border: 0px none;
+  color: #262b33;
+  pointer-events: unset;
+  transition: color 0.1s ease 0s;
+  height: auto;
+}
+.left-form .form-sec .form-control::placeholder {
+  color: #98a1b3;
+  opacity: 1;
+}
+.left-form .form-sec .form-group label {
+  font-size: 16px;
+  line-height: 20px;
+  color: #98a1b3;
+}
+.left-form .form-sec .form-group label i {
+  color: #2196f3;
+  margin-left: 3px;
+  font-size: 20px;
+}
+.left-form .form-sec .form-group .form-control {
+  border-radius: 3px;
+  padding: 11px 16px;
+  width: 100%;
+  display: block;
+  caret-color: #2196f3;
+  background-color: #f2f5fa;
+  outline: currentcolor none medium;
+  border: 0px none;
+  color: #262b33;
+  pointer-events: unset;
+  transition: color 0.1s ease 0s;
+  height: auto;
+}
+.left-form .form-sec .form-group .form-control::placeholder {
+  color: #98a1b3;
+  opacity: 1;
+}
+.left-form .form-sec .form-group.user-img {
+  margin-top: 15px;
+}
+.left-form .form-sec .form-group.user-img .user-icon {
+  flex: 0 0 60px;
+  width: 60px;
+  height: 60px;
+  border-radius: 3px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #f2f5fa;
+  color: #cfd6e6;
+  transition: background-color 0.1s ease 0s, color 0.1s ease 0s;
+}
+.left-form .form-sec .form-group.user-img .user-icon svg {
+  fill: currentColor;
+}
+.left-form .form-sec .form-group.user-img:hover {
+  cursor: pointer;
+}
+.left-form .form-sec .form-group.user-img:hover .user-icon {
+  background-color: #e6f4ff;
+  color: #2196f3;
+}
+.left-form .form-sec .form-group.user-img:hover .user-icon svg {
+  fill: #2196f3;
+}
+.left-form .form-sec .form-group.user-img:hover a {
+  color: #0056b3;
+  text-decoration: none;
+}
+.left-form .form-sec .form-group.user-img:hover a:hover {
+  text-decoration: none;
+}
+.left-form .form-sec .block {
+  margin-top: 30px;
+}
+.left-form .form-sec .block h4 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.left-form .form-sec .block h4 svg {
+  margin-left: 5px;
+  fill: #cfd6e6;
+}
+.left-form .form-sec .block h4 svg:hover {
+  fill: #2196f3;
+}
+.left-form .form-sec .block p {
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  color: #98a1b3;
+  margin-bottom: 6px;
+}
+.left-form .form-sec .block textarea {
+  height: 200px;
+  resize: none;
+}
+.left-form .form-sec .block > a {
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding: 6px 14px;
+  width: 100%;
+  border-radius: 4px;
+  background-color: rgba(230, 244, 255, 0);
+  color: #2196f3;
+  font-weight: 600;
+  cursor: pointer;
+  outline: currentcolor none medium;
+  transition: background-color 0.15s ease 0s;
+  margin-top: 15px;
+}
+.left-form .form-sec .block > a svg {
+  fill: #2196f3;
+}
+.left-form .form-sec .block > a:hover {
+  text-decoration: none;
+  background: rgba(230, 244, 255, 0.5);
+}
+.left-form .form-sec .block .skils {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 0 0;
+}
+.left-form .form-sec .block .skils > a {
+  display: flex;
+  align-items: center;
+  margin: 0px 12px 12px 0px;
+  padding: 6px 6px 6px 10px;
+  border-radius: 4px;
+  background-color: #f2f5fa;
+  color: #262b33;
+  font-size: 16px;
+  line-height: 20px;
+  white-space: nowrap;
+  transition: background-color 0.1s ease 0s, color 0.1s ease 0s;
+  will-change: opacity, transform;
+  cursor: pointer;
+}
+.left-form .form-sec .block .skils > a svg {
+  margin-left: 2px;
+  fill: #98a1b3;
+  transition: color 0.1s ease 0s;
+}
+.left-form .form-sec .block .skils > a:hover {
+  text-decoration: none;
+  background-color: #e6f4ff;
+  color: #2196f3;
+}
+.left-form .form-sec .block .skils > a:hover svg {
+  fill: #2196f3;
+}
+.left-form .form-sec .block ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  margin: 15px 0 0;
+}
+.left-form .form-sec .block ul li {
+  width: 50%;
+  margin-bottom: 12px;
+  margin-right: 32px;
+  width: calc(50% - 32px);
+}
+.left-form .form-sec .block ul li a {
+  display: flex;
+  align-items: center;
+  color: #262b33;
+  font-size: 19px;
+  line-height: 24px;
+}
+.left-form .form-sec .block ul li a img {
+  margin-right: 8px;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.left-form .form-sec .block ul li a:hover {
+  color: #2196f3;
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .left-form {
+    padding: 20px;
+  }
+  .left-form .form-sec .block ul li {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+.in{
+  display: block !important;
+}
+.panel-group{
+  border: 1px solid rgb(230, 235, 244);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  user-select: none;
+  pointer-events: auto !important;
+  margin-bottom:10px;
+}
+.panel-heading{
+  position: relative;
+  user-select: none;
+}
+.panel-body{
+  padding:15px;
+}
+.panel-inner{
+  position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 70px;
+    padding: 15px 20px;
+    user-select: none;
+    cursor: pointer;
+}
+.fIJKcW {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  min-width: 0px;
+  margin-right: 8px;
+}
+.jSLZTO {
+  font-size: 16px;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s ease 0s;
+  font-weight: 600;
+}
+.eApNNm {
+  font-size: 16px;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s ease 0s;
+  color: rgb(152, 161, 179);
+}
+.LYHIX {
+  position: relative;
+  flex-shrink: 0;
+  color: rgb(184, 190, 204);
+  cursor: pointer;
+  transition: color 0.15s ease 0s, opacity 0.15s ease 0s;
+  margin-left: 8px;
+}
+.jKxQkF {
+  font-weight: 400;
+  bottom: calc(100% + 6px);
+  white-space: nowrap;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  position: absolute;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.3px;
+  color: rgb(255, 255, 255);
+  padding: 5px 8px;
+  border-radius: 3px;
+  background-color: rgb(38, 43, 51);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;
+}
+.LYHIX {
+  position: relative;
+  flex-shrink: 0;
+  color: rgb(184, 190, 204);
+  cursor: pointer;
+  transition: color 0.15s ease 0s, opacity 0.15s ease 0s;
+  margin-left: 8px;
+}
+/*# sourceMappingURL=layout.css.map */

@@ -3,7 +3,8 @@ import {
     UDPATE_EMPLOYER,
     UPDATE_START_DATE,
     UPDATE_END_DATE,
-    Add_NEW_EMPLYEEMENT_BOX
+    Add_NEW_EMPLYEEMENT_BOX,
+    DELETE_EMPLYEEMENT_BOX
 } from '../../actionTypes.jsx'
 
 const initialState = {
@@ -22,13 +23,18 @@ function employeeHistoryReducer(state = initialState, action){
         case Add_NEW_EMPLYEEMENT_BOX : 
                         return {
                             ...state,
-                            employeehistory: [...state.employeehistory, {"jobtitle":'',"employer":'',"startDate":'',"endDate":'' }] 
+                            employeehistory: [...state.employeehistory, {"jobtitle":'',"employer":'',"startDate":'',"endDate":'', "key":action.payload.number }] 
                         }
+        case DELETE_EMPLYEEMENT_BOX : 
+            return {
+                ...state,
+                employeehistory: state.employeehistory.filter(item => item.key !== action.payload.number)                     
+            }
         case UPDATE_EMPLOYEE_HISTORY_JOB_TITLE : 
         return {
             ...state,
             employeehistory: state.employeehistory.map(
-                (employeehistory, i) => i === action.payload.number ? {...employeehistory, jobtitle: action.payload.jobtitle}
+                (employeehistory, i) => employeehistory.key === action.payload.number ? {...employeehistory, jobtitle: action.payload.jobtitle}
                                         : employeehistory
             )                     
         }
@@ -36,7 +42,7 @@ function employeeHistoryReducer(state = initialState, action){
                             return {
                                 ...state,
                                 employeehistory: state.employeehistory.map(
-                                    (employeehistory, i) => i === action.payload.number ? {...employeehistory, employer: action.payload.employer}
+                                    (employeehistory, i) => employeehistory.key === action.payload.number ? {...employeehistory, employer: action.payload.employer}
                                                             : employeehistory
                                 )                     
                                 }
@@ -44,7 +50,7 @@ function employeeHistoryReducer(state = initialState, action){
                 return {
                     ...state,
                     employeehistory: state.employeehistory.map(
-                        (employeehistory, i) => i === action.payload.number ? {...employeehistory, startDate: action.payload.startDate}
+                        (employeehistory, i) => employeehistory.key === action.payload.number ? {...employeehistory, startDate: action.payload.startDate}
                                                 : employeehistory
                     )                     
                 }
@@ -53,7 +59,7 @@ function employeeHistoryReducer(state = initialState, action){
                 return {
                     ...state ,
                     employeehistory: state.employeehistory.map(
-                        (employeehistory, i) => i === action.payload.number ? {...employeehistory, endDate: action.payload.endDate}
+                        (employeehistory, i) => employeehistory.key === action.payload.number ? {...employeehistory, endDate: action.payload.endDate}
                                                 : employeehistory
                     )                     
                 }

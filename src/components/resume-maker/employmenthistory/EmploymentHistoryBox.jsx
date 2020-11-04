@@ -43,46 +43,97 @@ export class EmploymentHistoryBox extends Component {
             case 'employer' : 
             store.dispatch( {type:UDPATE_EMPLOYER, payload:{employer:event.target.value, number:this.state.mynumber}}) 
             break; 
-            default:
-                    break;
-        }
-    }
-    employmentDatesHandler = (key, value) =>{
-        this.setState({
-            [key]:value
-        })
-        switch (key) {            
             case 'startDate': 
-            store.dispatch( {type:UPDATE_START_DATE, payload:{startDate:value, number:this.state.mynumber}}) 
+            store.dispatch( {type:UPDATE_START_DATE, payload:{startDate:event.target.value, number:this.state.mynumber}}) 
                         break;
             
             case 'endDate' : 
-            store.dispatch( {type:UPDATE_END_DATE, payload:{endDate:value, number:this.state.mynumber}}) 
+            store.dispatch( {type:UPDATE_END_DATE, payload:{endDate:event.target.value, number:this.state.mynumber}}) 
                         break;
             default:
                     break;
         }
     }
 
- 
+    convertDateToString = (date) => {
+        return date.toLocaleString("en-GB", {
+            month: "short",
+            year: "numeric",
+        });      
+     }
+     convertDateToStringnForInput = (date) => {
+        var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
 
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+     }
+        
     render() {
         return (
-            <div className="employmentBox">
-                <FormControl className="employmentDetail">
-                    <TextField value={this.state.jobtitle} label="Job Title" name='jobtitle' onChange={this.employmentDetailsHandler} />
-                </FormControl>
+            <div className="panel-group">
+                <div className="panel panel-default">
+                    <div className="panel-heading" data-toggle="collapse" href={`#collapse-${this.state.mynumber}`}>
+                        <div className="panel-inner">
+                        <div className="sc-iUpOdG fIJKcW">
+                            <div className="sc-kGeDwz sc-hgeeVt jSLZTO">
+                                {this.state.jobtitle?this.state.jobtitle:"(Not Specified)"}
+                            </div>
+                            <div className="sc-kGeDwz sc-gwZsXD eApNNm">
+                                {this.convertDateToString(new Date(Date.parse(this.state.startDate)))} - {this.convertDateToString(new Date(Date.parse(this.state.endDate)))}
+                            </div>
+                        </div>
+                        <div className="sc-cKZAiZ sc-klSiHT LYHIX">
+                            <div className="sc-iUVpnZ jKxQkF">
+                                Expand
+                            </div>
+                            <div className="sc-bWFPNQ eqtGtW">
+                                <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.431 7.257l1.352-1.474 5.893 5.48a1 1 0 0 1 0 1.474l-5.893 5.45-1.352-1.475L14.521 12 9.43 7.257z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>                        
+                        </div>
+                    </div>
+                <div id={`collapse-${this.state.mynumber}`} className="panel-collapse collapse">
+                <div className="panel-body">
+                <div className="row">
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>Job Title</label>
+									<input className="form-control" type="text"  value={this.state.jobtitle} name='jobtitle' onChange={this.employmentDetailsHandler} placeholder="Job Title"/>
+								</div>
+							</div>
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>Employer</label>
+									<input className="form-control" value={this.state.employer} name='employer' onChange={this.employmentDetailsHandler} placeholder="Employer"/>
+								</div>
+							</div>
 
-                <FormControl className="employmentDetail">
-                    <TextField  value={this.state.employer} label="Employer" name='employer' onChange={this.employmentDetailsHandler} />
-                </FormControl>
 
-                <FormControl>
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>Start Date <i className="fa fa-question-circle-o"></i></label>
+									<input className="form-control" type="date" value={this.convertDateToStringnForInput(new Date(Date.parse(this.state.startDate)))} name="startDate"  onChange={this.employmentDetailsHandler} placeholder="Start Date"/>
+								</div>
+							</div>
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>End Date <i className="fa fa-question-circle-o"></i></label>
+									<input className="form-control" type="date" value={this.convertDateToStringnForInput(new Date(Date.parse(this.state.endDate)))} name="endDate"  onChange={this.employmentDetailsHandler} placeholder="End Date"/>
+								</div>
+							</div>
+
                
-                <DatePicker selected={this.state.startDate} name="startDate"  onChange={date => this.employmentDatesHandler("startDate", date)} />
-
-                <DatePicker selected={this.state.endDate} name="endDate"  onChange={date => this.employmentDatesHandler("endDate", date)} />
-
+                <div className="col-lg-12">
                 <CKEditor
                     editor={ ClassicEditor }
                     config={
@@ -107,11 +158,18 @@ export class EmploymentHistoryBox extends Component {
                         // console.log( 'Focus.', editor );
                     } }
                 />
-              
-                </FormControl>
-                <Button color="primary" onClick={() => { this.props.deleteEmploymentBox(this.state.mynumber) }}>
+                </div>
+                <div className="col-lg-12">
+                <a href={void(0)} onClick={() => { this.props.deleteEmploymentBox(this.state.mynumber) }}>
                     -  Delete
-                </Button>
+                </a>
+                </div>
+            </div>
+
+
+                </div>
+                </div>
+            </div>
             </div>
         )
     }

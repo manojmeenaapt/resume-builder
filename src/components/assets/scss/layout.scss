@@ -1,0 +1,438 @@
+@font-face {
+    font-family: 'AinsdaleRegular';
+    src: url('../fonts/AinsdaleRegular.eot');
+    src: url('../fonts/AinsdaleRegular.eot') format('embedded-opentype'),
+         url('../fonts/AinsdaleRegular.woff2') format('woff2'),
+         url('../fonts/AinsdaleRegular.woff') format('woff'),
+         url('../fonts/AinsdaleRegular.ttf') format('truetype'),
+         url('../fonts/AinsdaleRegular.svg#AinsdaleRegular') format('svg');
+}
+@font-face {
+    font-family: 'alternate_gothic_no3_dregular';
+    src: url('../fonts/alternate_gothic_no3_d_regular-webfont.woff2') format('woff2'),
+         url('../fonts/alternate_gothic_no3_d_regular-webfont.woff') format('woff'),
+         url('../fonts/alternate_gothic_no3_d_regular-webfont.svg#alternate_gothic_no3_dregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'pangram';
+    src: url('../fonts/pangram-extralight-webfont.eot');
+    src: url('../fonts/pangram-extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pangram-extralight-webfont.woff2') format('woff2'),
+         url('../fonts/pangram-extralight-webfont.woff') format('woff'),
+         url('../fonts/pangram-extralight-webfont.svg#pangramextralight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'pangram';
+    src: url('../fonts/pangram-light-webfont.eot');
+    src: url('../fonts/pangram-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pangram-light-webfont.woff2') format('woff2'),
+         url('../fonts/pangram-light-webfont.woff') format('woff'),
+         url('../fonts/pangram-light-webfont.svg#pangramlight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'pangram';
+    src: url('../fonts/pangram-regular-webfont.eot');
+    src: url('../fonts/pangram-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pangram-regular-webfont.woff2') format('woff2'),
+         url('../fonts/pangram-regular-webfont.woff') format('woff'),
+         url('../fonts/pangram-regular-webfont.svg#pangramregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'pangram';
+    src: url('../fonts/pangram-medium-webfont.eot');
+    src: url('../fonts/pangram-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pangram-medium-webfont.woff2') format('woff2'),
+         url('../fonts/pangram-medium-webfont.woff') format('woff'),
+         url('../fonts/pangram-medium-webfont.svg#pangrammedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'pangram';
+    src: url('../fonts/pangram-bold-webfont.eot');
+    src: url('../fonts/pangram-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pangram-bold-webfont.woff2') format('woff2'),
+         url('../fonts/pangram-bold-webfont.woff') format('woff'),
+         url('../fonts/pangram-bold-webfont.svg#pangrambold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'pangram';
+    src: url('../fonts/pangram-extrabold-webfont.eot');
+    src: url('../fonts/pangram-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pangram-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/pangram-extrabold-webfont.woff') format('woff'),
+         url('../fonts/pangram-extrabold-webfont.svg#pangramextrabold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'pangram';
+    src: url('../fonts/pangram-black-webfont.eot');
+    src: url('../fonts/pangram-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pangram-black-webfont.woff2') format('woff2'),
+         url('../fonts/pangram-black-webfont.woff') format('woff'),
+         url('../fonts/pangram-black-webfont.svg#pangramblack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+
+}
+
+$font-primary:pangram;
+$font-secondary:alternate_gothic_no3_dregular;
+$primary: #3D3935;
+$white: #fff;
+$dark: #1e1e1e;
+$fw-900:900;
+$fw-700:700;
+$fw-600:600;
+$fw-500:500;
+$fw-400:400;
+$fw-300:300;
+$fw-200:200;
+
+
+body {
+    font-family: $font-primary;
+    font-size: 14px;
+    font-weight: $fw-400;
+	padding:0;
+	color:$primary;
+	height:100vh;
+}
+
+
+
+.left-form {
+	padding:50px;
+	.top {
+		h3 {
+			font-size: 32px;
+			line-height: 34px;
+		}
+		span {
+			display: flex;
+			align-items: center;
+			font-size: 16px;
+			line-height: 20px;
+			color: rgb(152, 161, 179);
+			cursor: pointer;
+			justify-content: center;
+			img {
+				width: 19px;
+				height: 12px;
+				margin-right: 8px;
+				display: inline-block;
+			}
+		}
+	}
+	.progress-sec {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 3px solid rgb(242, 245, 250);
+		padding-bottom: 10px;
+		margin:20px 0 16px;
+		position: relative;
+		
+		.left,.right {
+			p {
+				margin:0;
+				font-size: 16px;
+				line-height: 20px;
+				color: rgb(152, 161, 179);
+				display: flex;
+				align-items: center;
+				span {
+					display: inline-block;
+					font-size: 16px;
+					line-height: 20px;
+					font-weight: 600;
+					color: rgb(37, 184, 105);
+					margin-right: 6px;
+				}
+				i {
+					font-size: 16px;
+					line-height: 20px;
+					font-weight: 600;
+					color: rgb(37, 184, 105);
+					margin-left: 16px;
+				}
+			}
+		}
+		.left {
+			p {
+				span {
+					color:rgb(255, 76, 76);
+				}
+			}
+		}
+		&:before {
+			content:"";
+			background:rgb(255, 76, 76);
+			height: 3px;
+			width: 10%;
+			position: absolute;
+			bottom:-3px;
+			left: 0;
+		}
+	}
+
+	.form-sec {
+		margin-top:40px;
+		h4 {
+			font-size: 22px;
+			line-height: 28px;
+			font-weight: 600;
+			margin-bottom: 12px;
+		}
+		.form-control {
+			border-radius: 3px;
+			padding: 11px 16px;
+			width: 100%;
+			display: block;
+			caret-color: rgb(33, 150, 243);
+			background-color: rgb(242, 245, 250);
+			outline: currentcolor none medium;
+			border: 0px none;
+			color: rgb(38, 43, 51);
+			pointer-events: unset;
+			transition: color 0.1s ease 0s;
+			height: auto;
+			&::placeholder {
+				color: rgb(152, 161, 179);
+				opacity: 1;
+			}
+		}
+		.form-group {
+			label {
+				font-size: 16px;
+				line-height: 20px;
+				color: rgb(152, 161, 179);
+				i {
+					color:rgb(33, 150, 243);
+					margin-left:3px;
+					font-size: 20px;
+				}
+			}
+			.form-control {
+				border-radius: 3px;
+				padding: 11px 16px;
+				width: 100%;
+				display: block;
+				caret-color: rgb(33, 150, 243);
+				background-color: rgb(242, 245, 250);
+				outline: currentcolor none medium;
+				border: 0px none;
+				color: rgb(38, 43, 51);
+				pointer-events: unset;
+				transition: color 0.1s ease 0s;
+				height: auto;
+				&::placeholder {
+					color: rgb(152, 161, 179);
+					opacity: 1;
+				}
+			}
+			
+			&.user-img {
+				margin-top: 15px;
+				.user-icon {
+					flex: 0 0 60px;
+					width: 60px;
+					height: 60px;
+					border-radius: 3px;
+					margin-right: 16px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					overflow: hidden;
+					background: rgb(242, 245, 250);
+					color: rgb(207, 214, 230);
+					transition: background-color 0.1s ease 0s, color 0.1s ease 0s;
+					svg {
+						fill: currentColor;
+					}
+				}
+				&:hover {
+					cursor: pointer;
+					.user-icon {
+						background-color: rgb(230, 244, 255);
+						color: rgb(33, 150, 243);
+						svg {
+							fill: rgb(33, 150, 243);
+						}
+					}
+					a {
+						color:#0056b3;
+						text-decoration: none;
+						&:hover {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+
+		.block {
+			margin-top:30px;
+			h4 {
+				display: flex;
+				align-items: center;
+				margin:0;
+				svg {
+					margin-left:5px;
+					fill: rgb(207, 214, 230);
+					&:hover {
+						fill: rgb(33, 150, 243);
+					}
+				}
+			}
+			p {
+				display: block;
+				font-size: 16px;
+				line-height: 20px;
+				color: rgb(152, 161, 179);
+				margin-bottom: 6px;
+			}
+			textarea {
+				height: 200px;
+				resize: none;
+			}
+			& > a {
+				font-size: 16px;
+				line-height: 20px;
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				position: relative;
+				padding: 6px 14px;
+				width: 100%;
+				border-radius: 4px;
+				background-color: rgba(230, 244, 255, 0);
+				color: rgb(33, 150, 243);
+				font-weight: 600;
+				cursor: pointer;
+				outline: currentcolor none medium;
+				transition: background-color 0.15s ease 0s;
+				margin-top:15px;
+				svg {
+					fill: rgb(33, 150, 243);
+				}
+				&:hover {
+					text-decoration: none;
+					background:rgba(230, 244, 255, 0.5);
+				}
+			}
+
+			.skils {
+				display: flex;
+				flex-wrap: wrap;
+				margin:15px 0 0;
+				& > a {
+					display: flex;
+					align-items: center;
+					margin: 0px 12px 12px 0px;
+					padding: 6px 6px 6px 10px;
+					border-radius: 4px;
+					background-color: rgb(242, 245, 250);
+					color: rgb(38, 43, 51);
+					font-size: 16px;
+					line-height: 20px;
+					white-space: nowrap;
+					transition: background-color 0.1s ease 0s, color 0.1s ease 0s;
+					will-change: opacity, transform;
+					cursor: pointer;
+					svg {
+						margin-left: 2px;
+						fill: rgb(152, 161, 179);
+						transition: color 0.1s ease 0s;
+					}
+					&:hover {
+						text-decoration: none;
+						background-color: rgb(230, 244, 255);
+						color: rgb(33, 150, 243);
+						svg {
+							fill: rgb(33, 150, 243);
+						}
+					}
+				}
+			}
+			ul {
+				display: flex;
+				list-style: none;
+				padding:0;
+				flex-wrap: wrap;
+				margin:15px 0 0;
+				li {
+					width: 50%;
+					margin-bottom: 12px;
+					margin-right: 32px;
+					width: calc(50% - 32px);
+					a {
+						display: flex;
+						align-items: center;
+						color: rgb(38, 43, 51);
+						font-size: 19px;
+						line-height: 24px;
+						img {
+							margin-right: 8px;
+							display: block;
+							width: 40px;
+							height: 40px;
+						}
+						&:hover {
+							color: rgb(33, 150, 243);
+							text-decoration: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+
+@import "responsive";

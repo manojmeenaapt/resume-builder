@@ -26,29 +26,45 @@ export class EducationBox extends Component {
 
     render() {
         return (
-            <div className="educationbox">
-                <FormControl className="educationDetail">
-                    <TextField label="School/College" />
-                </FormControl>
+            <div className="row">
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>School/College</label>
+									<input className="form-control" type="text" name='school_college' placeholder="School/College"/>
+								</div>
+							</div>
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>Degree</label>
+									<input className="form-control" name='degree' placeholder="Degree"/>
+								</div>
+							</div>
 
-                <FormControl className="educationDetail">
-                    <TextField  label="Degree" />
-                </FormControl>
 
-                <FormControl>
-               
-                <DatePicker selected={this.state.startDate} onChange={date => this.setState({
-                            startDate:date
-                })} />
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>Start Date <i className="fa fa-question-circle-o"></i></label>
+									<input className="form-control" type="date" selected={this.state.startDate} onChange={date => this.setState({
+                                                startDate:date
+                                    })} placeholder="Start Date"/>
+								</div>
+							</div>
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>End Date <i className="fa fa-question-circle-o"></i></label>
+									<input className="form-control" type="date" selected={this.state.endDate} onChange={date => this.setState({
+                                                endDate:date
+                                    })} placeholder="End Date"/>
+								</div>
+							</div>
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>City</label>
+									<input className="form-control" name='city' placeholder="City"/>
+								</div>
+							</div>
 
-                <DatePicker selected={this.state.endDate} onChange={date => this.setState({
-                                endDate:date
-                    })} />
-
-                <FormControl className="educationDetail">
-                    <TextField  label="City" />
-                </FormControl>
-
+                            <div className="col-lg-12">
                 <CKEditor
                     editor={ ClassicEditor }
                     config={
@@ -62,8 +78,9 @@ export class EducationBox extends Component {
                         // console.log( 'Editor is ready to use!', editor );
                     } }
                     onChange={ ( event, editor ) => {
+                       // this.descriptionHandler(editor.getData());
                         const data = editor.getData();
-                        //console.log( { event, editor, data } );
+                       // console.log( { event, editor, data } );
                     } }
                     onBlur={ ( event, editor ) => {
                         // console.log( 'Blur.', editor );
@@ -72,9 +89,12 @@ export class EducationBox extends Component {
                         // console.log( 'Focus.', editor );
                     } }
                 />
-              
-                </FormControl>
-               
+                </div>
+                <div className="col-lg-12">
+                <a href={void(0)} onClick={() => { this.props.deleteEmploymentBox(this.state.mynumber) }}>
+                    -  Delete
+                </a>
+                </div>
             </div>
         )
     }

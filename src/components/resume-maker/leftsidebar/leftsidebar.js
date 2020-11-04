@@ -12,15 +12,17 @@ import ResumeTitle from '../resumetitle/resumetitle'
 class LeftSidebar extends Component {
     render() {
         return (
-            <div className="leftsidebar">
-                <div className="resume-head"> 
+            <div className="col-md-6">
+                <div className="left-form"> 
                     <ResumeTitle />
                     <Language />
+                    <div className="form-sec">
                     <PersonalDetails />
                     <ProfessionalSummary />
                     <EmploymentHistory />
                     <Education />
                     <WebsiteLinks />
+                    </div>
                 </div>
             </div>
         )

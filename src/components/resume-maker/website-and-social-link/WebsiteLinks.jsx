@@ -30,15 +30,15 @@ export class WebsiteLinks extends Component {
         })
 
         return (
-            <div className="websitelink">
-                <h1>Website & Social Links</h1>
+            <div className="block">
+                <h4>Website & Social Links</h4>
                 <p>You can add links to websites you want hiring managers to see! Perhaps It will be  a link to your portfolio, LinkedIn profile, or personal website</p>
             <div className="boxes">
                 {WebsiteLinkBoxes}
             </div>
-                <Button color="primary" onClick={() => { this.addWebsiteLinks(this.state.WebsiteLinkBoxes) }}>
+                <a href={void(0)}  onClick={() => { this.addWebsiteLinks(this.state.WebsiteLinkBoxes) }}>
                     +  Add Links
-                </Button>
+                </a>
             </div>
         )
     }

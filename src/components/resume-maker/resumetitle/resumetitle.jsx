@@ -12,8 +12,11 @@ export class ResumeTitle extends Component {
 
     render() {
         return (
-            <div className="resume-title">
-                <TextField label="Resume Title" value={this.props.resumetitle.title} autoFocus={true} fullWidth = {true} onChange={this.updateResumeTitle}/>
+            <div className="top text-center">
+                <div className="form-group">
+                    <h3>Resume Title</h3>
+                    <input className="form-control" value={this.props.resumetitle.title} type="text" name="" placeholder="Resume Title" onChange={this.updateResumeTitle}/>
+                </div>
             </div>
         )
     }

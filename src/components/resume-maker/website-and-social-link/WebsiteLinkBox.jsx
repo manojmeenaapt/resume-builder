@@ -18,15 +18,24 @@ export class EducationBox extends Component {
 
     render() {
         return (
-            <div className="educationbox">
-                <FormControl className="educationDetail">
-                    <TextField label="Label" />
-                </FormControl>
-
-                <FormControl className="educationDetail">
-                    <TextField  label="Link" />
-                </FormControl>
-               
+            <div className="row">
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>Label</label>
+									<input className="form-control" type="text"  name='label' placeholder="Label"/>
+								</div>
+							</div>
+							<div className="col-lg-6">
+								<div className="form-group">
+									<label>Link</label>
+									<input className="form-control" name='link' placeholder="Link"/>
+								</div>
+							</div>
+                            <div className="col-lg-12">
+                                <a href={void(0)} onClick={() => { this.props.deleteEmploymentBox(this.state.mynumber) }}>
+                                    -  Delete
+                                </a>
+                            </div>
             </div>
         )
     }

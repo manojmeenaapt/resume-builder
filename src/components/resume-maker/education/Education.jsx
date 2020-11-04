@@ -30,15 +30,15 @@ export class Education extends Component {
         })
         return (
             
-            <div className="education">
-                <h1>Education</h1>
+            <div className="block">
+                <h4>Education</h4>
                 <p>If relevant, include your most recent educational achievements and the dates here</p>
             <div className="boxes">
                 {boxes}
             </div>
-                <Button color="primary" onClick={() => { this.addEmploymentBox(this.state.Educations) }}>
+                <a href={void(0)} onClick={() => { this.addEmploymentBox(this.state.Educations) }}>
                     +  Add Education
-                </Button>
+                </a>
             </div>
         )
     }

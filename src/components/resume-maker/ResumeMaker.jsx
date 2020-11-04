@@ -6,7 +6,7 @@ import React, { Component } from 'react'
 export class ResumerMaker extends Component {
     render() {
         return (
-            <div className="resumemaker">
+            <div className="row">
                 <LeftSidebar />
                 <RightSidebar /> 
             </div>

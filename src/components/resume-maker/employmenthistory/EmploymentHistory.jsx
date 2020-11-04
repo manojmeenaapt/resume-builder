@@ -27,19 +27,18 @@ export class EmploymentHistory extends Component {
 
     deleteEmploymentBox(index){
         console.log(index);
-        var boxes = this.state.employmentBoxes.filter((item, i) => i !== index);
+        store.dispatch( {type:DELETE_EMPLYEEMENT_BOX, payload:{number:index}}) 
+        var boxes = this.state.employmentBoxes.filter((item, i) => item !== index);
         this.setState({
             employmentBoxes : boxes,
-            countEmployementBoxes: this.state.countEmployementBoxes-1
         })
-        store.dispatch( {type:DELETE_EMPLYEEMENT_BOX, payload:{number:this.state.countEmployementBoxes}}) 
     }
    
     render() {
         return (
             
-            <div className="employmentHistory">
-                <h1>Employment History</h1>
+            <div className="block">
+                <h4>Employment History</h4>
                 <p>Include your last 10 years of relevant experience and dates in this section. List your most recent position first.</p>
             <div className="boxes">
                 {
@@ -49,9 +48,9 @@ export class EmploymentHistory extends Component {
 
                 }
             </div>
-                <Button color="primary" onClick={() => { this.addEmploymentBox() }}>
+                <a href={void(0)} onClick={() => { this.addEmploymentBox() }}>
                     +  Add Employment
-                </Button>
+                </a>
             </div>
         )
     }
