@@ -74,6 +74,59 @@ body {
   font-size: 32px;
   line-height: 34px;
 }
+.editbtn{
+  height:20px;
+  width:20px;
+  background-color: transparent;
+  border:none;
+  font-size: 21px;
+  line-height: 21px;
+}
+.savebtn, .cancelbtn{
+  height:20px;
+  width:20px;
+  background-color: transparent;
+  border:none;
+  font-size: 21px;
+  line-height: 40px;
+  margin: 5px;
+}
+.editbtn::before{
+  content: "\270E";
+}
+.savebtn::before{
+  content: "\2713";
+}
+.cancelbtn::before{
+  content: "\2715";
+}
+.left-form .top h3 .title{
+  font-size: 32px;
+  line-height: 34px;
+  color: #3D3935;
+}
+.form-control-container input{
+  border-radius: 3px;
+    padding: 11px 16px;
+    width: 80%;
+    display: block;
+    caret-color: #2196f3;
+    background-color: #f2f5fa;
+    outline: currentcolor none medium;
+    border: 0px none;
+    color: #262b33;
+    pointer-events: unset;
+    transition: color 0.1s ease 0s;
+    height: auto;
+    float: left;
+}
+.form-control-container input:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
 .left-form .top span {
   display: flex;
   align-items: center;

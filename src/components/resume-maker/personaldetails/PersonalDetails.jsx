@@ -17,38 +17,26 @@ import {
     UPDATE_DRIVING_LICENSE,
     UPDATE_PLACE_OF_BIRTH,
     UPDATE_DOB,
-    UDPATE_NATIONALITY
+	UDPATE_NATIONALITY,
+	UPDATE_PERSONAL_DETAIL_TITLE
 } from '../../../redux/actionTypes.jsx'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { connect } from 'react-redux'
+import EdiText from "react-editext";
 
 
 export class PersonalDetails extends Component {
     constructor(props) {
         super(props)
-    
-        this.state = {
-            jobtitle:'',
-            firstname:'',
-            lastname:'',
-            email:'',
-            phone:'',
-            country:'',
-            city:'',
-            address:'',
-            postalcode:'',
-            drivinglicense:'',
-            nationality:'',
-            placeofbirth:'',
-            dob:''
+	}
+	updatePersonalDetailsTitle = (value) => {
+		if(value == ""){
+            value = "Personal Detail";
         }
-    }
-    
-
+		store.dispatch( {type:UPDATE_PERSONAL_DETAIL_TITLE, payload:{title:value}}) 
+	}
         personaldetailHandler = (event) =>{
-        this.setState({
-            [event.target.name]:event.target.value
-        })
                         switch (event.target.name) {
                             case 'jobtitle' : 
                             store.dispatch( {type:UPDATE_JOB_TITLE, payload:{jobtitle:event.target.value}}) 
@@ -109,14 +97,29 @@ export class PersonalDetails extends Component {
     }
 
     render() {
+		var title = this.props.personaldetails.title;
         return (
             <div className="block">
-                <h4>Personal Details</h4>
+                <h4>
+					<EdiText
+						value={title?title:'Personal Details'}
+						type="text"
+						onSave={this.updatePersonalDetailsTitle}
+						submitOnEnter={true}
+						cancelOnEscape={true}
+						submitOnUnfocus={true}
+						startEditingOnFocus={true}
+						editButtonClassName="editbtn"
+						saveButtonClassName="savebtn"
+						cancelButtonClassName="cancelbtn"
+						editContainerClassName="form-control-container"
+						/>
+						</h4>
                 <div className="row">
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Wanted Job Title <i className="fa fa-question-circle-o"></i></label>
-									<input className="form-control" type="text" value={this.state.jobtitle} name='jobtitle' id="job-title" variant="outlined" onChange={this.personaldetailHandler} placeholder="e.g. Teacher"/>
+									<input className="form-control" type="text" value={this.props.personaldetails.jobtitle} name='jobtitle' id="job-title" variant="outlined" onChange={this.personaldetailHandler} placeholder="e.g. Teacher"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
@@ -132,75 +135,75 @@ export class PersonalDetails extends Component {
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>First Name</label>
-									<input className="form-control" type="text"  value={this.state.firstname} name="firstname" id="firstName" onChange={this.personaldetailHandler} placeholder="First Name"/>
+									<input className="form-control" type="text"  value={this.props.personaldetails.firstname} name="firstname" id="firstName" onChange={this.personaldetailHandler} placeholder="First Name"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Last Name</label>
-									<input className="form-control" type="text" value={this.state.lastname} name="lastname" id="lastName" onChange={this.personaldetailHandler} placeholder="Last name"/>
+									<input className="form-control" type="text" value={this.props.personaldetails.lastname} name="lastname" id="lastName" onChange={this.personaldetailHandler} placeholder="Last name"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Email</label>
-									<input className="form-control" type="text"  value={this.state.email} name="email" id="email" placeholder="Email"  onChange={this.personaldetailHandler}/>
+									<input className="form-control" type="text"  value={this.props.personaldetails.email} name="email" id="email" placeholder="Email"  onChange={this.personaldetailHandler}/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Phone</label>
-									<input className="form-control" type="text"  value={this.state.phone} name="phone" id="phone" onChange={this.personaldetailHandler} placeholder="Phone"/>
+									<input className="form-control" type="text"  value={this.props.personaldetails.phone} name="phone" id="phone" onChange={this.personaldetailHandler} placeholder="Phone"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Country</label>
-									<input className="form-control" type="text" value={this.state.country} name="country" id="country" onChange={this.personaldetailHandler} placeholder="Country"/>
+									<input className="form-control" type="text" value={this.props.personaldetails.country} name="country" id="country" onChange={this.personaldetailHandler} placeholder="Country"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>City</label>
-									<input className="form-control" type="text" value={this.state.city} name="city" id="city" onChange={this.personaldetailHandler} placeholder="City"/>
+									<input className="form-control" type="text" value={this.props.personaldetails.city} name="city" id="city" onChange={this.personaldetailHandler} placeholder="City"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Address</label>
-									<input className="form-control" type="text" value={this.state.address} name="address" id="address" onChange={this.personaldetailHandler} placeholder="Address"/>
+									<input className="form-control" type="text" value={this.props.personaldetails.address} name="address" id="address" onChange={this.personaldetailHandler} placeholder="Address"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Postal Code</label>
-									<input className="form-control" type="text" value={this.state.postalcode} name="postalcode" id="postalCode" onChange={this.personaldetailHandler} placeholder="Postal Code"/>
+									<input className="form-control" type="text" value={this.props.personaldetails.postalcode} name="postalcode" id="postalCode" onChange={this.personaldetailHandler} placeholder="Postal Code"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Driving License <i className="fa fa-question-circle-o"></i></label>
-									<input className="form-control" type="text" value={this.state.drivinglicense} name="drivinglicense" id="dl" onChange={this.personaldetailHandler} placeholder="License No"/>
+									<input className="form-control" type="text" value={this.props.personaldetails.drivinglicense} name="drivinglicense" id="dl" onChange={this.personaldetailHandler} placeholder="License No"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Nationality <i className="fa fa-question-circle-o"></i></label>
-									<input className="form-control" type="text" value={this.state.nationality} name="nationality" id="nationality" onChange={this.personaldetailHandler} placeholder="Nationality"/>
+									<input className="form-control" type="text" value={this.props.personaldetails.nationality} name="nationality" id="nationality" onChange={this.personaldetailHandler} placeholder="Nationality"/>
 								</div>
 							</div>
 
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Place Of Birth</label>
-									<input className="form-control" type="text" value={this.state.placeofbirth} name="placeofbirth" id="placeBirth" onChange={this.personaldetailHandler} placeholder="Place Of Birth"/>
+									<input className="form-control" type="text" value={this.props.personaldetails.placeofbirth} name="placeofbirth" id="placeBirth" onChange={this.personaldetailHandler} placeholder="Place Of Birth"/>
 								</div>
 							</div>
 
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Date Of Birth <i className="fa fa-question-circle-o"></i></label>
-									<input className="form-control" type="date" selected={this.state.dob} name="dob" id="dob" onChange={this.personaldetailHandler} placeholder="Date Of Birth"/>
+									<input className="form-control" type="date" value={this.props.personaldetails.dob} name="dob" id="dob" onChange={this.personaldetailHandler} placeholder="Date Of Birth"/>
 								</div>
 							</div>
 							
@@ -212,5 +215,12 @@ export class PersonalDetails extends Component {
         )
     }
 }
+const mapStateToProps = (state, ownProps) => {
+    return {
+        personaldetails: state.personaldetails
+      }
+    }
 
-export default PersonalDetails
+
+    const PersonalDetailsComp = connect(mapStateToProps)(PersonalDetails)
+export default PersonalDetailsComp

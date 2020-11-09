@@ -4,6 +4,8 @@ import languageReducer from './resumeeditor/languagereducer/languageReducer'
 import personalDetailReducer from './resumeeditor/personaldetails/personaldetailsReducers'
 import professionalDetailReducer from './resumeeditor/professionaldetails/professionaldetailsReducers'
 import employeeHistoryReducer from './resumeeditor/employeehistory/employeehistoryReducers'
+import educationReducer from './resumeeditor/education/educationReducers'
+import websitelinkReducer from './resumeeditor/websitelink/websitelinkReducer'
 
 
 const rootReducer = combineReducers({
@@ -11,7 +13,9 @@ const rootReducer = combineReducers({
     language:languageReducer,
     personaldetails: personalDetailReducer,
     professionaldetails:professionalDetailReducer,
-    employeehistory:employeeHistoryReducer
+    employeehistory:employeeHistoryReducer,
+    education:educationReducer,
+    website_link:websitelinkReducer
 })
 
 export default rootReducer

@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import { Language } from '../language/Language'
+import  Language  from '../language/Language'
 import PersonalDetails from '../personaldetails/PersonalDetails'
 import ProfessionalSummary from '../professionalsummary/ProfessionalSummary'
 import EmploymentHistory from '../employmenthistory/EmploymentHistory';
 import Education from '../education/Education'
 import WebsiteLinks from '../website-and-social-link/WebsiteLinks'
 import ResumeTitle from '../resumetitle/resumetitle'
-
-
 
 class LeftSidebar extends Component {
     render() {

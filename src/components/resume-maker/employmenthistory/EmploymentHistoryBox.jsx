@@ -18,37 +18,26 @@ import Button from '@material-ui/core/Button';
 
 
 
-export class EmploymentHistoryBox extends Component {
+class EmploymentHistoryBox extends Component {
 
     constructor(props) {
         super(props);
-            this.state = {
-                mynumber:this.props.number,
-                jobtitle:'',
-                employer:'',
-                startDate:new Date(),
-                endDate:new Date()
-            }
-            console.log(this.props.number);
       }
       employmentDetailsHandler = (event) =>{
-        this.setState({
-            [event.target.name]:event.target.value
-        })
         switch (event.target.name) {
             case 'jobtitle' : 
-            store.dispatch( {type:UPDATE_EMPLOYEE_HISTORY_JOB_TITLE, payload:{jobtitle:event.target.value, number:this.state.mynumber}}) 
+            store.dispatch( {type:UPDATE_EMPLOYEE_HISTORY_JOB_TITLE, payload:{jobtitle:event.target.value, number:this.props.number}}) 
             break;
 
             case 'employer' : 
-            store.dispatch( {type:UDPATE_EMPLOYER, payload:{employer:event.target.value, number:this.state.mynumber}}) 
+            store.dispatch( {type:UDPATE_EMPLOYER, payload:{employer:event.target.value, number:this.props.number}}) 
             break; 
             case 'startDate': 
-            store.dispatch( {type:UPDATE_START_DATE, payload:{startDate:event.target.value, number:this.state.mynumber}}) 
+            store.dispatch( {type:UPDATE_START_DATE, payload:{startDate:event.target.value, number:this.props.number}}) 
                         break;
             
             case 'endDate' : 
-            store.dispatch( {type:UPDATE_END_DATE, payload:{endDate:event.target.value, number:this.state.mynumber}}) 
+            store.dispatch( {type:UPDATE_END_DATE, payload:{endDate:event.target.value, number:this.props.number}}) 
                         break;
             default:
                     break;
@@ -71,14 +60,14 @@ export class EmploymentHistoryBox extends Component {
         return (
             <div className="panel-group">
                 <div className="panel panel-default">
-                    <div className="panel-heading" data-toggle="collapse" href={`#collapse-${this.state.mynumber}`}>
+                    <div className="panel-heading" data-toggle="collapse" href={`#collapse-${this.props.number}`}>
                         <div className="panel-inner">
                         <div className="sc-iUpOdG fIJKcW">
                             <div className="sc-kGeDwz sc-hgeeVt jSLZTO">
-                                {this.state.jobtitle?this.state.jobtitle:"(Not Specified)"}
+                                {this.props.jobtitle?this.props.jobtitle:"(Not Specified)"}
                             </div>
                             <div className="sc-kGeDwz sc-gwZsXD eApNNm">
-                                {this.convertDateToString(Date.parse(this.state.startDate))} - {this.convertDateToString(Date.parse(this.state.endDate))}
+                                {this.convertDateToString(Date.parse(this.props.startDate))} - {this.convertDateToString(Date.parse(this.props.endDate))}
                             </div>
                         </div>
                         <div className="sc-cKZAiZ sc-klSiHT LYHIX">
@@ -94,19 +83,19 @@ export class EmploymentHistoryBox extends Component {
                         </div>                        
                         </div>
                     </div>
-                <div id={`collapse-${this.state.mynumber}`} className="panel-collapse collapse">
+                <div id={`collapse-${this.props.number}`} className="panel-collapse collapse">
                 <div className="panel-body">
                 <div className="row">
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Job Title</label>
-									<input className="form-control" type="text"  value={this.state.jobtitle} name='jobtitle' onChange={this.employmentDetailsHandler} placeholder="Job Title"/>
+									<input className="form-control" type="text"  value={this.props.jobtitle} name='jobtitle' onChange={this.employmentDetailsHandler} placeholder="Job Title"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Employer</label>
-									<input className="form-control" value={this.state.employer} name='employer' onChange={this.employmentDetailsHandler} placeholder="Employer"/>
+									<input className="form-control" value={this.props.employer} name='employer' onChange={this.employmentDetailsHandler} placeholder="Employer"/>
 								</div>
 							</div>
 
@@ -114,13 +103,13 @@ export class EmploymentHistoryBox extends Component {
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>Start Date <i className="fa fa-question-circle-o"></i></label>
-									<input className="form-control" type="date" value={this.convertDateToStringnForInput(Date.parse(this.state.startDate))} name="startDate"  onChange={this.employmentDetailsHandler} placeholder="Start Date"/>
+									<input className="form-control" type="date" value={this.convertDateToStringnForInput(Date.parse(this.props.startDate))} name="startDate"  onChange={this.employmentDetailsHandler} placeholder="Start Date"/>
 								</div>
 							</div>
 							<div className="col-lg-6">
 								<div className="form-group">
 									<label>End Date <i className="fa fa-question-circle-o"></i></label>
-									<input className="form-control" type="date" value={this.convertDateToStringnForInput(Date.parse(this.state.endDate))} name="endDate"  onChange={this.employmentDetailsHandler} placeholder="End Date"/>
+									<input className="form-control" type="date" value={this.convertDateToStringnForInput(Date.parse(this.props.endDate))} name="endDate"  onChange={this.employmentDetailsHandler} placeholder="End Date"/>
 								</div>
 							</div>
 
@@ -152,7 +141,7 @@ export class EmploymentHistoryBox extends Component {
                 />
                 </div>
                 <div className="col-lg-12">
-                <a href={void(0)} onClick={() => { this.props.deleteEmploymentBox(this.state.mynumber) }}>
+                <a href={void(0)} onClick={() => { this.props.deleteEmploymentBox(this.props.number) }}>
                     -  Delete
                 </a>
                 </div>

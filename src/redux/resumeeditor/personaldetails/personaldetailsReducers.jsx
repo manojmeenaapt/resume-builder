@@ -11,10 +11,12 @@ import {
     UPDATE_DRIVING_LICENSE,
     UPDATE_PLACE_OF_BIRTH,
     UPDATE_DOB,
-    UDPATE_NATIONALITY
+    UDPATE_NATIONALITY,
+    UPDATE_PERSONAL_DETAIL_TITLE
 } from '../../actionTypes.jsx'
 
 const initialState = {
+        title:'Personal Details',
         jobtitle:'',
         firstname:'',
         lastname:'',
@@ -35,11 +37,16 @@ const initialState = {
 function personalDetailReducer(state = initialState, action){
 
     switch (action.type) {
+        case UPDATE_PERSONAL_DETAIL_TITLE : 
+            return {
+                ...state,
+                title:action.payload.title
+            }
         case UPDATE_JOB_TITLE : 
-                        return {
-                            ...state,
-                            jobtitle:action.payload.jobtitle
-                        }
+            return {
+                ...state,
+                jobtitle:action.payload.jobtitle
+            }
         case UDPATE_FIRST_NAME : 
                             return {
                                 ...state,

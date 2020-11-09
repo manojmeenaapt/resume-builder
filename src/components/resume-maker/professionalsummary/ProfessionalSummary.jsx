@@ -4,31 +4,48 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import './ProfessionalSummary.css'
 import store from '../../../redux/store'
 import {
-    UPDATE_PROFESSIONAL_DETAILS
+    UPDATE_PROFESSIONAL_DETAILS,
+    UPDATE_PROFESSIONAL_DETAILS_TITLE
 } from '../../../redux/actionTypes.jsx'
+import { connect } from 'react-redux'
+import EdiText from "react-editext";
 
 
 export class ProfessionalSummary extends Component {
     constructor(props) {
         super(props)
-    
-        this.state = {
-            professionalDetails:'',
-        }
     }
     professionalDetailsHandler = (data) =>{
-        store.dispatch( {type:UPDATE_PROFESSIONAL_DETAILS, payload:data}) 
+        store.dispatch( {type:UPDATE_PROFESSIONAL_DETAILS, payload:{description:data}}) 
+    }
+    professionalDetailsTitleHandler = (data) =>{
+        store.dispatch( {type:UPDATE_PROFESSIONAL_DETAILS_TITLE, payload:{title:data}}) 
     }
 
     render() {
+		var title = this.props.professionaldetails.title;
         return (
             <div className="block">
-                <h4>Professional Summary</h4>
+                <h4>
+                    <EdiText
+						value={title?title:'Professional Summary'}
+						type="text"
+						onSave={this.professionalDetailsTitleHandler}
+						submitOnEnter={true}
+						cancelOnEscape={true}
+						submitOnUnfocus={true}
+						startEditingOnFocus={true}
+						editButtonClassName="editbtn"
+						saveButtonClassName="savebtn"
+						cancelButtonClassName="cancelbtn"
+						editContainerClassName="form-control-container"
+					/>
+                </h4>
                 <p>Include 2-3 clear sentences about your overall experience</p>
-
 
                 <CKEditor
                     editor={ ClassicEditor }
+                    data={this.props.professionaldetails.professionalDetails}
                     config={
                       {
                         height : "300px",
@@ -57,5 +74,12 @@ export class ProfessionalSummary extends Component {
         )
     }
 }
+const mapStateToProps = (state, ownProps) => {
+    return {
+        professionaldetails: state.professionaldetails
+      }
+    }
 
-export default ProfessionalSummary
+
+    const ProfessionalSummaryComp = connect(mapStateToProps)(ProfessionalSummary)
+export default ProfessionalSummaryComp

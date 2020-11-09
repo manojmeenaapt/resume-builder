@@ -4,15 +4,13 @@ import {
     UPDATE_START_DATE,
     UPDATE_END_DATE,
     Add_NEW_EMPLYEEMENT_BOX,
-    DELETE_EMPLYEEMENT_BOX
+    DELETE_EMPLYEEMENT_BOX,
+    UPDATE_EMPLOYMENT_HISTORY_TITLE
 } from '../../actionTypes.jsx'
 
 const initialState = {
         employeehistory:[],
-        /*jobtitle:'',
-        employer:'',
-        startDate:'',
-        endDate:'',*/
+        title:'Employment History'
 }
 
 
@@ -20,11 +18,16 @@ const initialState = {
 function employeeHistoryReducer(state = initialState, action){
 
     switch (action.type) {
+        case UPDATE_EMPLOYMENT_HISTORY_TITLE : 
+            return {
+                ...state,
+                title: action.payload.title
+            }
         case Add_NEW_EMPLYEEMENT_BOX : 
-                        return {
-                            ...state,
-                            employeehistory: [...state.employeehistory, {"jobtitle":'',"employer":'',"startDate":'',"endDate":'', "key":action.payload.number }] 
-                        }
+            return {
+                ...state,
+                employeehistory: [...state.employeehistory, {"jobtitle":'',"employer":'',"startDate":new Date(),"endDate":new Date(), "key":action.payload.number }] 
+            }
         case DELETE_EMPLYEEMENT_BOX : 
             return {
                 ...state,
